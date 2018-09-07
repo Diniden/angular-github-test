@@ -13,6 +13,15 @@ Thus, I added a simple webpack configuration and a special command to accomplish
 
 I am using MobX as my observable store. I find this library reduces a lot of boilerplate and keeps a single direction of flow very easy to achieve. It also helps keep the componentry 'dumb'.
 
+## Some things the app does
+
+- Type to search for repositories within github.
+- Dynamic column picker that lets you pick available columns to display in the table.
+- Virtual scroller pages results in automatically at the end of the list.
+- Graph shows top downloaded repositories based on the column's value. The graphs determine which columns are valid number values to make sensical comparisons.
+- Click a bar in the graph to jump to that repo in the table
+- Click a repo to view it's issues. The issues will show the body content with a mark down rendering.
+
 ## Tested on
 
 I know this project works on a Mac with Chrome.
