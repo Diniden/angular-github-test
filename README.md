@@ -13,6 +13,12 @@ Thus, I added a simple webpack configuration and a special command to accomplish
 
 I am using MobX as my observable store. I find this library reduces a lot of boilerplate and keeps a single direction of flow very easy to achieve. It also helps keep the componentry 'dumb'.
 
+## Tested on
+
+I know this project works on a Mac with Chrome.
+I do not have the time or resources to run this on a windows machine yet.
+I will be testing on a linux box soon.
+
 ## Special Custom Dev Command
 
 This will:
