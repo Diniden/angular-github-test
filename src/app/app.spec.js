@@ -25,14 +25,13 @@ var ngCoreTesting = require('@angular/core/testing');
 var AppRoutes = require('app/app.routes.js');
 var covalentCore = require('@covalent/core');
 var App = require('app/app.js');
-var AppDemo = require('app/components/home-view/home-view.js');
-var AppDemoDialog = require('app/components/app-demo/dialogs/demo/app-demo-dialog.js');
-var AppService = require('app/store/app.store.js');
+var HomeView = require('app/components/home-view/home-view.js');
+var AppStore = require('app/store/app.store.js');
 
 describe('app module spec', function () {
     var comp;
     var fixture;
-    var appService;
+    var appStore;
 
     beforeEach(function () {
         ngCoreTesting.TestBed.configureTestingModule({
@@ -86,14 +85,13 @@ describe('app module spec', function () {
             ],
             declarations: [
                 App,
-                AppDemo,
-                AppDemoDialog
+                HomeView,
             ],
             entryComponents: [
-                AppDemoDialog
+
             ],
             providers: [
-                AppService,
+                AppStore,
                 {
                     provide: ngCommon.APP_BASE_HREF,
                     useValue: '/'
@@ -105,8 +103,8 @@ describe('app module spec', function () {
         fixture.detectChanges();
         comp = fixture.componentInstance;
 
-        // AppService from the root injector
-        appService = ngCoreTesting.TestBed.get(AppService);
+        // AppStore from the root injector
+        appService = ngCoreTesting.TestBed.get(AppStore);
     });
 
     it('should create component', function () {

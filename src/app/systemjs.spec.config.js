@@ -102,7 +102,6 @@
             'app/app.js': 'app/app.js',
             'app/store/app.store.js': 'app/store/app.store.js',
             'app/components/home-view/home-view.js': 'app/components/home-view/home-view.js',
-            'app/components/app-demo/dialogs/demo/app-demo-dialog.js': 'app/components/app-demo/dialogs/demo/app-demo-dialog.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
