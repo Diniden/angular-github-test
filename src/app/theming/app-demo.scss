@@ -1,0 +1,50 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the 'License'); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* Welcome to Compass.
+ * In this file you should centralize your imports. After compilation simply import this file using the following HTML or equivalent:
+ * <link href='app/css/app-demo.min.css' media='screen, projection' rel='stylesheet' type='text/css' /> */
+
+@import '../../node_modules/@angular/material/theming';
+@import '../../node_modules/@covalent/core/theming/all-theme';
+@import './_colors.scss';
+
+// Custom typography
+$custom-typography: mat-typography-config(
+    $button: mat-typography-level(14px, 14px, 400)
+);
+$custom-toolbar-typography: mat-typography-config(
+    $title: mat-typography-level(20px, 32px, 400)
+);
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core($custom-typography);
+
+// Setting the toolbar to the proper spec weight
+@include mat-toolbar-typography($custom-toolbar-typography);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+$theme: mat-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+@include covalent-theme($theme);
+
+// Plus imports for other components in your app.
+// @import './_helperClasses.scss';
+@import './_structureElements.scss';

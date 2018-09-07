@@ -1,0 +1,41 @@
+<div fxLayout="column" id="app-explorer-grid-list-viewer-agents-container" class="main pad-right-xxl pad-left-xxl">
+    <!-- Search list -->
+    <mat-card fxFlex="1 1 auto" *mobxAutorun>
+        <mat-card-content>
+            <mat-nav-list>
+                <a mat-list-item disabled class="header-item">
+                    <h3 matLine fxLayout="row" fxLayoutAlign="center center">
+                        Issues for repo: {{repositories.selectedRepo.full_name}}
+                    </h3>
+                </a>
+                <mat-divider></mat-divider>
+                <ng-template tdLoading [tdLoadingUntil]="!issues.isLoading" tdLoadingType="circular" tdLoadingStrategy="overlay" tdLoadingColor="primary">
+                    <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="issues.list">
+                        <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+                            <mat-list-item fxLayout="row" routerLink="/" routerLinkActive="active">
+                                <div matLine fxFlex="1 1" fxLayout="row" fxLayoutAlign="center center" class="list-item-contents">
+                                    <img fxFlex="0 1 50px" matListAvatar [src]="row.user.avatar_url"/>
+                                    <div fxFlex="0 1" fxLayout="column">
+                                      <span fxFlex="1 1">
+                                          Reporter: {{row.user.login}}
+                                      </span>
+                                      <span fxFlex="1 1" style="white-space: normal">
+                                          Title: {{row.title}}
+                                      </span>
+                                    </div>
+                                    <div fxFlex="5 5" fxLayout="column" class="summary">
+                                      <td-markdown class="summary-contents">
+                                          {{row.body}}
+                                      </td-markdown>
+                                    </div>
+                                </div>
+                            </mat-list-item>
+                            <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
+                            <islast [isLast]="last" (onLastDone)="issues.loadMore()"></islast>
+                        </ng-template>
+                    </td-virtual-scroll-container>
+                </ng-template>
+            </mat-nav-list>
+        </mat-card-content>
+    </mat-card>
+</div>

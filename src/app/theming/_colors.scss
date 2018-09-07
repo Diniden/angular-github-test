@@ -1,0 +1,15 @@
+@import '../../node_modules/@angular/material/theming';
+@import '../../node_modules/@covalent/core/theming/all-theme';
+
+$primary: mat-palette($mat-blue, 700);
+$accent: mat-palette($mat-orange, 800, A100, A400);
+$warn: mat-palette($mat-red, 600);
+
+$blue8: $mat-blue;
+$grey4: #444444;
+$grey5: #555555;
+$grey6: #666666;
+$grey9: #999999;
+$grey11: #BBBBBB;
+$grey12: #CCCCCC;
+
