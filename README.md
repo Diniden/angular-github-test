@@ -47,6 +47,7 @@ npm run dev:quick
  - I ran out of time to research i18n support within the app
  - I have been an ESNEXT writer for many years. Writing pure ES5 proved challenging (mostly annoying) and since I run the code in Chrome directly, some ES6+ syntax may have snuck through. It's surprisingly hard to stop typing 'let' and 'const'.
  - Did not have any time to write many tests yet. I see it's in place to have them, but I got a little too ambitious with my features.
+ - Sorting: The table needed better sorting. I didn't have time to harmonize client side list sorting with the API calls on sorting. It's close, just needed to research the remote API more.
 
  ## Considerations
 
